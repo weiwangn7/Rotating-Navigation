@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: "Poppins" sans-serif;
+  background-color: #222;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  height: 100hv;
+  width: 100wh;
+  padding: 50px;
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ff7979;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle .btn:focus {
+  outline: none;
+}
+
+.circle #open {
+  left: 60%;
+}
+
+.circle #close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.circle .btn span {
+  font-size: 33px;
+}
+
+.contain {
+  max-width: 100%;
+  margin-top: 50px;
+}
+
+.contain h2 {
+  margin-bottom: 20px;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0px;
+  z-index: 100;
+  padding-left: 30px;
+}
+
+nav ul li {
+  margin: 40px 0;
+  color: #fff;
+  text-transform: uppercase;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+  font-size: 24px;
+}
+
+nav ul li span {
+  margin-right: 10px;
+  text-align: center;
+}
